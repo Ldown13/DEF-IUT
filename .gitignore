@@ -1,0 +1,26 @@
+# Custom files
+push.sh
+.obsidian
+
+# Sensitive configuration files
+conf/mail.yml
+
+# Email verification files
+src/emails_check/*
+!src/emails_check/README.md
+
+# Password reset files
+src/password_recovery/*
+!src/password_recovery/README.md
+
+# Log files
+log/*.log
+
+# JS libs
+src/express_webapp/node_modules
+src/express_webapp/def-iut-database/node_modules
+
+# Database
+src/express_webapp/database.db
+
+node_modules

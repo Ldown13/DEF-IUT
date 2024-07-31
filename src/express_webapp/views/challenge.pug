@@ -1,0 +1,129 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome-4.7.0/css/font-awesome.min.css')
+    script(src="/javascripts/challenge.js")
+
+  body
+    nav.navbar
+        // Left
+        a.logo(href='/')
+            img(src='/logos/Full_Logo_Horizontal.png', alt="Website logo", width='310', height='75')
+
+        // Right
+        ul.nav-links
+          li
+            a(href='/') Challenges
+          li
+            a(href='/scoreboard') Scoreboard
+          li
+            a(href='/myprofile') Mon compte
+          li
+            a(href='/disconnect') Déconnexion
+            
+    block content
+      #background-element
+        div.challenge-container
+          section.table__header
+            h1= challenge.titleChallenge
+            form(id="FlagForm", action='/challenge/'+challenge.idChallenge, method='post')
+              label(for='flagInput') 
+              .input-group
+                input(type='text', name='flagInput', id='flagInput', placeholder='Entrer le flag ici...', required)
+                img(src='/images/flag.png', alt='')
+              button.sendFlag-button(type='submit', hidden) Valider
+
+          section.table__body
+            p.challenge-description!= challenge.descriptionChallenge
+            table
+              tr
+                td Difficulté:
+                td #{challenge.itsDifficultyString}
+              if challenge.connection
+                tr
+                  td Connexion:
+                  td
+                    a(href=challenge.connection) #{challenge.connection}
+              tr
+                td Récompense :
+                td #{challenge.reward}
+              tr
+                td Nombre d'essais :
+                td #{retryCount}
+              if isFlagged
+                tr
+                  td Résolution :
+                  td #{isFlagged.hour} #{isFlagged.flagged}
+
+            // Boîte modale pour afficher le résultat
+            #resultModal.modal
+              .modal-content
+                div#resultMessage
+                  if success
+                    p.challenge-success #{success}
+                    if obtentions
+                      if obtentions.length > 0
+                        p.challenge-success Vous avez obtenu le(s) badge(s) suivant(s) :
+                          .give-badges
+                            ul(style="list-style-type: none; padding-left: 0;")
+                              each badges in obtentions
+                                li(style="display: inline-block; margin-right: 20px;") 
+                                  p.title= badges.titleBadge
+                                  ul(style="list-style-type: none; padding-left: 0; margin-top: 5px;")
+                                    li(style="display: inline-block; margin-right: 10px;") 
+                                      img(src='/badges/' + badges.idBadge + '.jpg', title=badges.descriptionBadge)
+                  if failed
+                    p.challenge-failed #{failed}
+
+          div.challenge-history-container
+            section.table__header
+              h3 Historique
+            // Tableau des réussites
+            section.table__body
+                table.table-successful-users
+                  thead
+                    tr
+                      th Utilisateur
+                      th Rang
+                      th Date
+                      th Heure
+                  if successUsers
+                    if (successUsers.length > 0)
+                      tbody
+                        each user in successUsers
+                          tr(onclick='redirectToUser('+user.idUser+')')
+                            td
+                              a(href=`/user/${user.idUser}`)= user.username
+                            td= user.rank
+                            td= user.flagged
+                            td= user.hour
+    script.
+      function redirectToUser(id) {
+        window.location.href = "/user/"+id;
+      }
+    script.
+      window.addEventListener('DOMContentLoaded', (event) => {
+        function formatDateInTable() {
+          const rows = document.querySelectorAll('.table-successful-users tbody tr');
+
+          rows.forEach(row => {
+            const dateCell = row.querySelector('td:nth-child(3)');
+            if (dateCell) {
+              const originalDate = dateCell.textContent.trim();
+              const formattedDate = formatDate(originalDate);
+              dateCell.textContent = formattedDate;
+            }
+          });
+
+          dates.forEach(date => {
+            date.textContent = formatDate(date.textContent);
+          });
+        }
+        formatDateInTable();
+      });
+
+    script(src="/javascripts/vantaThree.js")
+    script(src="/javascripts/vantaNet.js")
+    script(src="/javascripts/background-element.js")

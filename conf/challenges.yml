@@ -1,0 +1,127 @@
+#############################################################################
+# CHALLENGES CONFIGURATION FILE                                             #
+# Each challenge is defined by its - title,                                 #
+#                                  - category,                              #
+#                                  - difficulty,                            #
+#                                  - description,                           #
+#                                  - flag,                                  #
+#                                  - connection infos                       #
+#############################################################################
+
+#############################################################################
+# CATEGORIES                                                                #
+# What's about available categories :                                       #
+#                                       - "Programmation"                   #
+#                                       - "Reverse"                         #
+#                                       - "Web"                             #
+#                                       - "Cryptanalyse"                    #
+#                                       - "Réseau"                          #
+#                                       - "Autre"                           #
+#                                                                           #
+#############################################################################
+
+#############################################################################
+# BE CAREFUL, in the current application, you can add and edit challenges   #
+# BUT YOU CAN'T DELETE ANYTHING without reseting the database               #
+# Challenge identification is based on the title, if you change the title,  #
+# you create a new challenge instead of edit it                             #
+#############################################################################
+
+
+
+
+
+########## Start of the example challenge ######
+# The title of the challenge
+- title: "Bienvenue"
+  # The category of the challenge 
+  # Current categories are "Programmation", "Reverse", "Web", "Cryptanalyse","Réseau" and "Autre"
+  # Accepts strings
+  # Required
+  category: "Autre"
+  # The difficulty of the challenge
+  # Accepts integer from 1 to 5, 5 is the hardest difficulty
+  # Required
+  difficulty: 1
+  # The description of the challenge
+  # Accepts strings
+  # Required
+  description: "Bonjour, <br>Aimez-vous les crêpes ?<br>Solution : Oui"
+  # The flag for your challenge
+  # Accepts strings
+  # Required
+  flag: "Oui"
+  # The connexion information about how to connect to the challenge
+  # Accepts strings
+  # Comment or delete if not necessary
+  # connection: "http://example.com/"
+########## End of the example challenge ######
+
+
+
+
+- title: "A corps perdus (1/3)"
+  category: "Programmation"
+  difficulty: 1
+  description: "Un peu de programmation ?"
+  flag: "DEFIUT{PYTHON_IS_NOT_RUDE_TO_ANYONE_WHO_LIKES_CODING}"
+  connection: http://localhost:30001/etape1
+
+- title: "A corps perdus (2/3)"
+  category: "Programmation"
+  difficulty: 1
+  description: "Un peu de programmation ?"
+  flag: "DEFIUT{S0M3_CARACT3RE_FLIPP1NG}"
+  connection: http://localhost:30001/etape2
+
+- title: "A corps perdus (3/3)"
+  category: "Programmation"
+  difficulty: 1
+  description: "Un peu de programmation ?"
+  flag: "DEFIUT{M4K3_3VERY7HING_P4L1DR0ME}"
+  connection: http://localhost:30001/etape3
+
+- title: "Les Mots Croisés Mais En Mieux"
+  category: "Programmation"
+  difficulty: 5
+  description: "On cherche ici à trouver les mots de la liste présents dans la grille. On peut chercher les lettres pour
+reconstituer les mots en se déplaçant de manière verticale ou horizontale uniquement. Il est interdit
+de se déplacer en diagonale ou de sauter les cellules adjacentes. Il est également interdit de repasser
+sur une lettre pour le même mot."
+  flag: "DEFIUT{S0CK3TS_C4N_B3_FUN}"
+  connection: tcp://localhost:30002
+
+- title: "Des requêtes au service du septième art"
+  category: "Autre"
+  difficulty: 4
+  description: "Vous êtes sur le point de démarrer une quête cinématographique passionnante à travers la base de
+données Sakila. Vous allez devoir utiliser des requêtes MySQL afin résoudre une série d'énigmes.
+Votre objectif est de découvrir un flag composé de quatre morceaux : DEFIUT{film-prénom-montant-nom}, par
+exemple DEFIUT{COAST RAINBOW-LISA-123.15-COOPER). Chaque étape est indépendante et vous rapprochera
+de ce flag mystérieux.<br>
+<br>
+Étape 1 : le film idéal : Commencez votre aventure en cherchant le film idéal, quelque chose de beau et
+peut-être même de la science-fiction. Il faut trouver un film avec le mot 'beautiful' dans sa description,
+appartenant à la catégorie 'Sci-Fi'. Après avoir identifié quelques films correspondant aux critères,
+plongez dans le monde de la qualité en cherchant celui qui a le plus d’acteurs. Le titre de ce film sera la
+première partie du flag.<br>
+<br>
+Étape 2 : prénom mystérieux : Explorez les prénoms des clients ou des acteurs dont le prénom
+commence par la lettre 'S'. Choisissez celui qui a le moins de lettres parmi les cinq premiers résultats.
+Ce prénom constituera la deuxième partie du flag.<br>
+<br>
+Étape 3 : riche client français : Découvrez les clients français et trouvez celui qui a payé le plus cher pour
+une location. Ce montant sera la troisième partie du flag.<br>
+<br>
+Étape 4 : un cinéphile : Enfin, identifiez le client qui a loué au moins sept films de chaque catégorie, à
+l'exception de la catégorie 'Documentary'. Trouvez son nom, car cela constituera la dernière partie du
+flag."
+  flag: "DEFIUT{FRISCO FORREST-SAM-10.99-SELBY}"
+  connection: "mysql -h 127.0.0.1 -P 30004 -u user sakila -puser"
+  
+- title: "Point faible : trop fort"
+  category: "Web"
+  difficulty: 3
+  description: "On cherche ici à obtenir l’accès au compte d’administration en utilisant une injection de type SQL"
+  flag: "DEFIUT{SqLi_2_Niv3Au_1}"
+  connection: http://localhost:30003

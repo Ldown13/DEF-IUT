@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome-4.7.0/css/font-awesome.min.css')
+
+body
+  nav.navbar
+    // Left
+    a.logo(href='/')
+        img(src='/logos/Full_Logo_Horizontal.png',alt="Website logo",width='310', height='75')
+
+    // Right
+    ul.nav-links
+      li
+        a(href='/') Challenges
+      li
+        a(href='/scoreboard') Scoreboard
+      li
+        a(href='/myprofile') Mon compte
+      li
+        a(href='/disconnect') Déconnexion
+            
+  block content
+    #background-element
+      div.challenges-container
+        section.table__header
+          h1 Challenges
+          div.input-group
+            input(type='search', placeholder='Recherche...')
+            img(src='images/search.png', alt='')
+
+
+        section.table__body
+          if challenges.length > 0
+            table.table-challenges
+              thead
+                tr
+                  th Titre
+                    span.icon-arrow &UpArrow;
+                  th Catégorie
+                    span.icon-arrow &UpArrow;
+                  th Difficulté
+                    span.icon-arrow &UpArrow;
+                  th Points
+                    span.icon-arrow &UpArrow;
+                  th Résolu
+                    span.icon-arrow &UpArrow;
+
+              tbody
+                each challenge in challenges
+                  tr(onclick='redirectToChallenge('+challenge.idChallenge+')')
+                    td= challenge.titleChallenge
+                    td= challenge.itsCategory
+                    td= challenge.itsDifficultyString
+                    td= challenge.reward
+                    if challenge.flagged
+                      td.flagged &#0020;
+                       img(src='images/flag.png', alt='')
+                    else
+                      td.flagged  
+          else
+            p Aucun challenge n'est disponible pour le moment.
+
+  script.
+    function redirectToChallenge(id) {
+      window.location.href = "/challenge/"+id;
+    }
+
+  script(src="/javascripts/challenges.js")
+
+  script(src="/javascripts/vantaThree.js")
+  script(src="/javascripts/vantaNet.js")
+  script(src="/javascripts/background-element.js")

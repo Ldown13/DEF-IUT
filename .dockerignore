@@ -1,0 +1,16 @@
+# Custom files
+push.sh
+.obsidian
+
+# Email verification files
+src/emails_check/*
+
+# Password reset files
+src/password_recovery/*
+
+# Log files
+log/*
+
+# JS libs
+src/express_webapp/node_modules
+src/express_webapp/def-iut-database/node_modules

@@ -1,0 +1,1533 @@
+*{
+    padding:0;
+    margin:0;
+
+    font-family: sans-serif;
+}
+
+/* NavBar */
+.navbar {
+  
+  padding: 10px; 
+  color: white; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  padding-left: 1%;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: font-size 0.5s, text-decoration-color 0.5s; /* Transition de taille de police et de couleur de soulignement */
+  cursor: pointer;
+  transition:all 0.5s;
+}
+.nav-links a:hover {
+  color: #B690A5;
+  text-decoration-color: transparent;
+}
+
+
+body{
+    background-color:#B690A5;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-attachment: fixed;
+
+}
+/* CSS for the animated background */
+#background-element {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+}
+
+.vanta-canvas {
+    position: fixed !important;
+}
+
+.container{
+  text-align: center;
+}
+
+.login-form{
+    padding:10px;
+    overflow:hidden;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #ffffff, #dddddc);
+/*    box-shadow:  8px 8px 16px #000000,
+             -8px -8px 16px #7c7880;*/
+}
+
+.register-form{
+    width:350px;
+    background-color:#fff;
+    height:auto;
+    border-radius:10px;
+    padding:10px;
+    overflow:hidden;
+    background: linear-gradient(145deg, #ffffff, #dddddc);
+/*    box-shadow:  8px 8px 16px #000000,
+             -8px -8px 16px #7c7880;*/
+}
+
+.login-form .inputs-container{
+  margin-top: 60px;
+}
+
+.register-form .inputs-container{
+  margin-top: 40px;
+}
+.inputs{
+    margin-bottom:10px;
+}
+
+.text-center{
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+}
+
+.headings{
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-size:25px;
+}
+
+.mb-5{
+    margin-bottom:30px;
+}
+
+.password-input{
+    position:relative;
+    
+}
+
+.password-input i{
+    position:absolute;
+    top:15px;
+    right:17px;
+    cursor:pointer;
+    z-index:10;
+    color:#AAAAAA;
+    transition:all 0.5s;
+}
+
+.password-input i:hover{
+    color:#000;
+}
+
+.login-form .inputs input{
+    height:43px;
+    width:335px;
+    padding-left:10px;
+    border:2px solid #eee;
+    border-radius:5px;
+    transition:all 4s;
+}
+.register-form .inputs input{
+    height:43px;
+    width:335px;
+    padding-left:10px;
+    border:2px solid #eee;
+    border-radius:5px;
+    transition:all 4s;
+}
+
+.color{
+    color:#BBCCBB !important;
+}
+.login-form .inputs input:focus{
+    border:2px solid #890596;
+}
+.register-form .inputs input:focus{
+    border:2px solid #890596;
+}
+.strength-list{
+    margin-bottom: 10px;
+    margin-left:10px;
+    list-style:none;
+}
+.list-group i{
+    font-size:12px;
+    color:#aaa;
+}
+
+i.fa.fa-check.green-color {
+    color: green;
+}
+
+.list-group span.green-color{
+    margin-left: 10px;
+    font-size:13px;
+    color:green;
+}
+
+
+.list-group span{
+    margin-left: 10px;
+    font-size:13px;
+    color:#aaa;
+}
+
+
+.login-button{
+    height:45px;
+    width:347px;
+    margin-top:20px;
+    color:black;
+    font-size:14px;
+    cursor:pointer;
+    border:none;
+    border-radius:4px;
+    background-color:#B690A5;
+    transition:all 0.5s;
+
+}
+
+
+.mt-5{
+    margin-top:5px;
+}
+.login-button:hover{
+    background-color:#92466D;
+    color: white;
+}
+
+.a-tag{
+    text-decoration:none;
+    color:#92466D;
+    margin-left:6px;
+}
+
+/* Admin panel part */
+/* Users part */
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.user-info label {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+.user-info input[type="text"],
+.user-info input[type="number"] {
+    flex: 2;
+    width: calc(100% - 10px); /* Ajustement pour le padding/margin des champs */
+}
+
+
+/* My Profil part */
+/* Styles pour la page de profil */
+
+/* En-tête du profil */
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #92466D;
+  }
+  
+  /* Formulaire de profil */
+  .form-profile {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+*/  }
+
+  /* Groupes de formulaire */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #92466D;
+  }
+  
+  /* Contrôles du formulaire */
+  .form-control {
+    width: calc(100% - 20px);
+    height: 40px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    transition: border-color 0.3s;
+    font-size: 14px;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #92466D;
+  }
+
+  /* Hide the default checkbox */
+  .containerBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .containerBox {
+    display: flex;
+    gap: 10px;
+  }
+  
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: relative;
+    box-shadow: rgb(255, 84, 0) 0px 0px 0px 2px;
+    background-color: rgba(16, 16, 16, 0.5);
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: -1px;
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    transform-origin: 0px 10px;
+    border-radius: 4px;
+    margin: -1px 10px 0px 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .containerBox input:checked ~ .checkmark {
+    box-shadow: rgb(255, 84, 0) 0px 0px 0px 2px;
+    background-color: rgba(245, 24, 24, 0.5);
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: -1px;
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    transform-origin: 0px 10px;
+    border-radius: 4px;
+    margin: -1px 10px 0px 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .containerBox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .containerBox .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+    transition: all 500ms ease-in-out;
+  }
+  
+  /* Bouton de soumission */
+  .btn-submit {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: #B690A5;
+    transition: background-color 0.5s;
+  }
+  
+  .btn-submit:hover {
+    background-color: #92466D;
+  }
+
+
+.container-error {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+*/}
+
+.error-button{
+    height:45px;
+    width:347px;
+    margin-top:20px;
+    color:#fff;
+    font-size:14px;
+    cursor:pointer;
+    border:none;
+    border-radius:4px;
+    background-color:#92466D;
+    transition:all 0.5s;
+}
+
+.error-button:hover{
+    background-color:#92466D;
+}
+
+/**
+ * Scoreboard view css
+ */
+
+.scoreboard-container{
+    margin-top: 80px;
+    width: 82vw;
+    height: 80vh;
+    background-color: #fff5;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+
+    overflow: hidden;
+    max-width: 700px;
+    padding-bottom: 20px;
+}
+
+.scoreboard-container .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scoreboard-container .table__header h1 {
+    box-sizing: border-box;
+}
+
+.scoreboard-container .table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+    max-width: 600px;
+}
+
+
+.scoreboard-container .table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.scoreboard-container .table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.scoreboard-container .table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+.scoreboard-container table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: center;
+}
+
+.scoreboard-container tbody td a {
+    text-decoration: none;
+    color: black;
+}
+
+.scoreboard-container td {
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.scoreboard-container thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-align: center;
+    width: 175px;
+}
+
+.scoreboard-container thead th:hover {
+    color: #92466D;
+}
+
+
+.scoreboard-container tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.scoreboard-container tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+.scoreboard-container tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+.scoreboard-container tbody tr td {
+    width: 200px;
+}
+
+.scoreboard-container tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+@media (max-width: 1000px) {
+    .scoreboard-container td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+
+
+
+
+
+/**
+ * Challenge's list view
+ */
+
+.challenges-container{
+    margin-top: 100px;
+    width: 82vw;
+    max-height: 90vh;
+    background-color: #fff5;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+
+    overflow-x: hidden;
+    max-width: 900px;
+    max-height: 80vh;
+    
+}
+
+.challenges-container .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.challenges-container .table__header h1 {
+    box-sizing: border-box;
+}
+
+.challenges-container .table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+    max-width: 800px;
+}
+
+
+.challenges-container .table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.challenges-container .table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.challenges-container .table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+.challenges-container table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.challenges-container table tr td {
+    cursor: pointer;
+}
+
+.challenges-container td a {
+    text-decoration: none;
+    color: black;
+}
+
+.challenges-container td.flagged {
+    text-align: center;
+}
+
+.challenges-container td.flagged img {
+    height: 20px;
+}
+
+.challenges-container thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.challenges-container thead th:hover {
+    color: #92466D;
+}
+
+
+.challenges-container tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.challenges-container tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+.challenges-container tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+.challenges-container tbody tr td {
+    width: 200px;
+}
+
+.challenges-container tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+.challenges-container thead th span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+    
+    text-align: center;
+    font-size: 1rem;
+    
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+}
+
+.challenges-container thead th:hover span.icon-arrow{
+    border: 1.4px solid #92466D;
+}
+
+.challenges-container thead th.active span.icon-arrow{
+    background-color: #92466D;
+    color: #fff;
+}
+
+.challenges-container thead th.asc span.icon-arrow{
+    transform: rotate(180deg);
+}
+
+.challenges-container thead th.active,tbody td.active {
+    color: #92466D;
+}
+
+.challenges-container .table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+    margin-right: 40px;
+}
+
+.challenges-container .table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+
+.challenges-container .table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.challenges-container .table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 40px;
+}
+
+.challenges-container tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.challenges-container tbody tr.hide td,
+.challenges-container tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+.challenges-container tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+}
+
+
+/**
+ * Public user's profile view
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.user-container{
+    margin-top: 80px;
+    width: 82vw;
+    height: 80vh;
+    background-color: #fff5;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 700px;
+    padding-bottom: 20px;
+}
+
+.user-container ::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.user-container ::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.user-container:hover ::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+
+.user-container .username .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-container .username .table__header h1 {
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+.user-container .username .table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+    max-width: 600px;
+}
+
+
+
+
+.user-container .username table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.user-container .username td a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.user-container .username thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.user-container .username thead th:hover {
+    color: #92466D;
+}
+
+
+.user-container .username tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.user-container .username tbody tr {
+
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+.user-container .username tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+.user-container .username tbody tr td {
+    text-align: center;
+    width: 200px;
+}
+
+.user-container .username tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+
+
+.user-container .stats {
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+.user-container .stats .header{
+    background-color: #d5d1defe;
+    padding: 20px;
+    margin-top:30px;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.user-container .stats .header h1:hover{
+    color: #92466D;
+    cursor: pointer;
+}
+
+.user-container .stats .chart{
+    background-color: #ffffff;
+    padding: 20px;
+    
+    margin-bottom:30px;
+    margin-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+
+.user-container .history .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-container .history .table__header h1 {
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+.user-container .history .table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+    max-width: 600px;
+}
+
+
+.user-container .history .table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.user-container .history .table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.user-container .history .table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+.user-container .history table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.user-container .history table tr td {
+    cursor: pointer;
+}
+
+.user-container .history td a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.user-container .history thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-align: center;
+    width: 200px;
+}
+
+.user-container .history thead th:hover {
+    color: #92466D;
+}
+
+
+.user-container .history tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.user-container .history tbody tr {
+
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+.user-container .history tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+.user-container .history tbody tr td {
+    text-align: center;
+    width: 200px;
+}
+
+.user-container .history tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+
+
+
+.user-container .badges {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-top:20px
+}
+
+.user-container .badges .header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-container .badges .body {
+    align-items: center;
+    max-width: 650px;
+    min-width: 150px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+    border-radius: 20px;
+
+}
+ .user-container .badges .body .owned {
+    margin-bottom:20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+ .user-container .badges .body .others {
+    margin-bottom:20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.user-container .badges .body .subtitle {
+    padding: 20px;
+    background-color: #B690A5;
+    border-radius: 10px 10px 0 0;
+    margin-bottom:20px ;
+}
+
+.user-container .badges .body .badgelist ul  {
+    margin-bottom: 30px;
+}
+
+.user-container .badges .body .badgelist ul li ul li img {
+    padding: 1px;
+    border-radius: 20px;
+    width: 100px;
+    transition: transform 0.5s ease
+}
+
+.user-container .badges .body .badgelist ul li ul li img:hover {
+    transform: rotate(10deg);
+    background-color: #92466D;
+    padding: 1px;
+}
+
+.user-container .badges .body .badgelist ul li ul p.date {
+    font-style: italic;
+}
+
+.user-container .badges .body .badgelist ul li p.title {
+    font-weight: bold;
+}
+
+.give-badges {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-top:20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #BBCCBB;
+    padding: 20px;
+    border-radius: 10px;
+}
+.give-badges ul li img {
+    padding: 1px;
+    border-radius: 20px;
+    width: 100px;
+    transition: transform 0.5s ease
+}
+.give-badges ul li img:hover {
+    transform: rotate(10deg);
+    background-color: #92466D;
+    padding: 1px;
+}
+.give-badges ul li p.title {
+    font-weight: bold;
+}
+
+/**
+ * Error and success pop ups
+ */
+
+.div-profile-container{
+    padding:40px 20px;
+    overflow:hidden;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #ffffff, #dddddc);
+    width: 80vw;
+    max-width: 600px;
+}
+
+.div-register-error {
+    background-color: #CCBBBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.div-register-success {
+    background-color: #BBCCBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.div-recover-error {
+    background-color: #CCBBBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.div-recover-success {
+    background-color: #BBCCBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.div-connect-error {
+    background-color: #CCBBBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.div-myprofile-error {
+    margin-top: 30px;
+    margin-bottom: -30px;
+    background-color: #CCBBBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+.div-myprofile-success {
+    margin-top: 30px;
+    margin-bottom: -30px;
+    background-color: #BBCCBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.input-myprofile-update{
+    margin-top: 20px;
+}
+
+.div-verify-error {
+    margin-top: 30px;
+    background-color: #CCBBBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.div-verify-success {
+    margin-top: 30px;
+    background-color: #BBCCBB;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.alert{
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+
+/**
+ * Single challenge view
+ */
+
+.challenge-container {
+    margin-top: 100px;
+    width: 82vw;
+    background-color: #fff5;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 85vh;
+}
+
+.challenge-container .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.challenge-container .table__sub_header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.challenge-container .table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+
+.challenge-container table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+    margin: 30px;
+    
+}
+
+.challenge-container td a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.challenge-container tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #d5d1defe;
+}
+
+.challenge-container tbody td:first-child:hover {
+    color: #92466D;
+}
+
+
+.challenge-container tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.challenge-container tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+.challenge-container tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+.challenge-container tbody tr td {
+    width: 200px;
+}
+
+.challenge-container tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+.challenge-container .challenge-description {
+    background-color: #0000000b;
+    font-size: 16px;
+    font-style: italic;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.challenge-container .challenge-success {
+    background-color: #BBCCBB;
+    font-size: 16px;
+    font-style: italic;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.challenge-container .challenge-failed {
+    background-color: #fa2a2a93;
+    font-size: 16px;
+    font-style: italic;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.challenge-container .table__header .input-group {
+    width:60%;
+    height: 100%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+    height: 40px;
+    margin-right: 100px;
+
+
+}
+
+.challenge-container .table__header .input-group:hover {
+    width:70%;
+
+
+}
+
+.challenge-container .table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.challenge-container .table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+/**
+ * Second array in user's public profile
+ */
+
+.challenge-container .challenge-history-container .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.challenge-container .challenge-history-container .table__header h1 {
+    box-sizing: border-box;
+}
+
+.challenge-container .challenge-history-container .table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+    max-width: 60vw;
+}
+
+
+.challenge-container .challenge-history-container .table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.challenge-container .challenge-history-container .table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.challenge-container .challenge-history-container .table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+.challenge-container .challenge-history-container table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.challenge-container .challenge-history-container th {
+    width: 200px;
+}
+
+.challenge-container .challenge-history-container td a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.challenge-container .challenge-history-container thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.challenge-container .challenge-history-container thead th:hover {
+    color: #92466D;
+}
+
+
+.challenge-container .challenge-history-container tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+.challenge-container .challenge-history-container tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+.challenge-container tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+.challenge-container .challenge-history-container tbody tr td {
+    width: 300px;
+}
+
+.challenge-container .challenge-history-container thead tr th {
+    width: 300px;
+}
+
+.challenge-container .challenge-history-container tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+.myprofile-information {
+    margin: 30px;
+}
+
+.medal{
+    
+    border-radius: 10px;
+}
+
+#podium-1 td img {
+    max-width: 70px;
+}
+
+#podium-2 td img {
+    max-width: 60px;
+}
+
+#podium-3 td img {
+    max-width: 50px;
+}
+
+#podium-* td {
+    text-align: center;
+}

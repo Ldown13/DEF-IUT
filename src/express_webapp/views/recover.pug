@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome-4.7.0/css/font-awesome.min.css')
+  body
+    nav.navbar
+        // Left
+        a.logo(href='/')
+            img(src='/logos/Full_Logo_Horizontal.png',alt="Website logo",width='310', height='75')
+
+        // Right
+        ul.nav-links
+          li
+            a(href='/connect') Se connecter
+          li
+            a(href='/register') Créer un compte
+
+
+    block content
+      #background-element
+        .container
+          .login-form
+            
+            .headings
+              h3 Mot de passe oublié
+            .text-center.mb-5
+              p Veuillez saisir votre adresse e-mail pour réinitialiser votre mot de passe
+
+            form(id="loginForm", action="/recover", method="post")
+              .inputs-container
+                .inputs
+                  input(autocomplete='chrome-off', class='input-group', type='mail', placeholder='Adresse e-mail', name='mail')
+                
+                button.login-button(type='submit') Recevoir le mail
+                
+                span.text-center.mt-5
+                  | Vous n'avez pas de compte ? 
+                  a.a-tag(href='/register') Créer un compte
+          
+            if error
+              div.div-recover-error
+                .text-center.mb-5
+                  p= error
+            if success
+              div.div-recover-success
+                .text-center.mb-5
+                  p= success
+
+                 
+  script(src="/javascripts/vantaThree.js")
+  script(src="/javascripts/vantaNet.js")
+  script(src="/javascripts/background-element.js")

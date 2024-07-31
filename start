@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Change directory to the application directory
+cd ./src/express_webapp || exit
+
+# Start the Node.js application 
+
+echo "Service started on port 3000: http://localhost:3000"
+echo "Press CTRL+C to stop"
+
+npm start 
+
+# Change back to the previous directory
+cd ../../

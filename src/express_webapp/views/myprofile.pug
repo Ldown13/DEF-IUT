@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body
+    nav.navbar
+      // Left
+      a.logo(href='/')
+          img(src='/logos/Full_Logo_Horizontal.png',alt="Website logo",width='310', height='75')
+
+      // Right
+      ul.nav-links
+        li
+          a(href='/') Challenges
+        li
+          a(href='/scoreboard') Scoreboard
+        li
+          a(href='/myprofile') Mon compte
+        li
+          a(href='/disconnect') Déconnexion
+            
+    block content
+      #background-element
+        div.div-profile-container
+          h2 Bienvenue sur votre profil privé, #{user.username}!
+
+          p.myprofile-information Pour accéder à votre profil public, cliquez 
+            a(href="/user/" + user.idUser) ici
+
+          if message
+            p= message
+
+          // Formulaire de modification des informations
+          form(action='/myprofile', method='post', class='profile-form')
+            label(for='newUsername') Nom d'utilisateur :
+            input(type='text', id='newUsername', name='newUsername', value=user.username, class='form-control')
+            br
+            
+            label(for='newEmail') Email :
+            input(type='email', id='newEmail', name='newEmail', value=user.mail, class='form-control')
+
+            p.alert Tout changement d'adresse e-mail entraînera une nouvelle vérification nécessaire de celle-ci, vous ne pourrez plus vous connecter tant que celle-ci n'aura pas été vérifiée
+            br
+            label.containerBox
+              input(type="checkbox", id='delete', name='delete', class='form-control', onclick='if(this.checked == true) {if(window.confirm("Vous êtes sur le point de supprimer votre compte.  Etes-vous sûr de vouloir continuer ? Cela entraînera la perte définitive de toutes vos données.")){ this.checked = true; } else { this.checked = false; }}')
+              .checkmark
+              p Supprimer mon compte
+            input(type='submit', value='Mettre à jour', class='btn-submit')
+
+
+          if error
+            div.div-myprofile-error
+              .text-center.mb-5
+                p= error
+          if success
+            div.div-myprofile-success
+              .text-center.mb-5
+                p= success
+
+  script(src="/javascripts/vantaThree.js")
+  script(src="/javascripts/vantaNet.js")
+  script(src="/javascripts/background-element.js")
+
