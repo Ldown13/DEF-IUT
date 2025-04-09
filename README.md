@@ -3,7 +3,7 @@
 Cette application a pour but d'héberger des challenges informatiques divers pour les étudiants de l'UBS  
 Pour plus d'informations, reportez-vous au [cahier des charges](./documents/cahier_des_charges.pdf).
 
-Le code source de cette application est disponible à l'adresse suivante : https://github.com/Ne0re0/Def-IUT/
+Le code source de cette application est disponible à l'adresse suivante : https://github.com/Ldown13/Def-IUT/
 ## Aperçu
 
 **Page d'accueil**
