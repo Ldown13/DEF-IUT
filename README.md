@@ -30,7 +30,7 @@ sudo apt install git npm sqlite3 docker-compose -y
 2. Clonage du répertoire
 
 ```bash
-git clone https://github.com/Ne0re0/Def-IUT.git
+git clone https://github.com/Ldown13/Def-IUT.git
 cd Def-IUT
 ```
 
